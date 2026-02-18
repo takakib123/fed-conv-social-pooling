@@ -9,3 +9,4 @@ The processed dataset exceeds github file limit. Here are the files. Place them 
 
 # Training
 The notebooks can be used for training and evaluating the model in central and federated learning setup
+Set REUSE_WEIGHTS = False if training from scratch
