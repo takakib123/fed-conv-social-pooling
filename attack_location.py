@@ -428,8 +428,6 @@ def print_summary(results: dict, fl_checkpoint: str) -> None:
         print(f'    {flag} dsId={c} {DS_LABELS[c]:<22}: {acc*100:.2f}%  (gap: +{gap*100:.2f}%)')
     print('=' * 60)
     print()
-    print('  Next step: Run TAPPFL training and re-run this script on the')
-    print('  TAPPFL-protected representations to quantify privacy improvement.')
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
