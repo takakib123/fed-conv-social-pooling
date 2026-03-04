@@ -60,12 +60,12 @@ LOCAL_EPOCHS    = 2
 PRETRAIN_ROUNDS = 5          # first N rounds use MSE; remaining use NLL
 BATCH_SIZE      = 8192
 LOG_INTERVAL    = 10
-REUSE_WEIGHTS   = False      # set True + fill CHECKPOINT_PATH to warm-start
+REUSE_WEIGHTS   = True      # set True + fill CHECKPOINT_PATH to warm-start
 CHECKPOINT_PATH = ""         # e.g. "pretrained_models/fl_global_round_8.tar"
 DATA_DIR        = "data"     # directory that contains TrainSet.mat / ValSet.mat / TestSet_Keep.mat
 
 DEVICE = torch.device("cuda" if ARGS["use_cuda"] else "cpu")
-
+print(DEVICE)
 torch.manual_seed(42)
 np.random.seed(42)
 
@@ -566,8 +566,8 @@ def main():
             "Round %d | Avg Train (%s): %.4f | Val Loss: %.4f",
             round_num + 1, loss_label, avg_train, val_loss,
         )
-
-        save_path = f"trained_models_dp/fl_dp_round_{round_num + 1}.tar"
+        epsilon = DP_CONFIG["epsilon"]
+        save_path = f"trained_models_dp/fl_dp_{epsilon}_round_{round_num + 1}.tar"
         torch.save(global_weights, save_path)
         logger.info("Checkpoint saved → %s", save_path)
 
