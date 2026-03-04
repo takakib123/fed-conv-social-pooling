@@ -14,7 +14,10 @@ The notebooks can be used for training and evaluating the model in central and f
 Set REUSE_WEIGHTS = False if training from scratch
 
 # Inference attack
-'''
-python attack_lane_id.py --subset-ratio 0.05 --epochs 50   
 
-'''
+
+
+```
+
+python attack_lane_id.py --subset-ratio 0.05 --epochs 50   
+```
