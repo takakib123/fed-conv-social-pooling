@@ -18,6 +18,5 @@ Set REUSE_WEIGHTS = False if training from scratch
 
 
 ```
-
-python attack_lane_id.py --subset-ratio 0.05 --epochs 50   
+python attack_lane_id.py --checkpoint pretrained_models/cslstm_central_best.tar --subset-ratio 0.05 --epochs 50  
 ```
